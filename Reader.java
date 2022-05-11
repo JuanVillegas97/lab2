@@ -62,7 +62,7 @@ public class Reader extends MyFile {
   for (int i = 0; i < pathnames.length; i++) {
    for (int j = 0; j < userfileNames.length; j++) {
     if (pathnames[i].contains(userfileNames[j])) {
-     read(this.files[j], pathnames[i]); // !AQUI LE VAS A DAR EL FILE Y EL FILE ES IGUAL A +=
+     read(this.files[j], pathnames[i]);
     }
    }
   }
@@ -83,7 +83,6 @@ public class Reader extends MyFile {
   try {
    Scanner scanner = new Scanner(SetFile(fileName));
    boolean comment = false;
-
    while (scanner.hasNextLine()) {
     String data = scanner.nextLine();
     data = data.trim();
@@ -104,7 +103,6 @@ public class Reader extends MyFile {
      comment = false;
      no++;
     }
-
     if (data.contains("//.i")) {
      i++;
     }
@@ -132,9 +130,9 @@ public class Reader extends MyFile {
    scanner.close();
    file.a += a;
    file.t += t;
-   file.i += m;
-   file.b += m;
-   file.d += m;
+   file.i += i;
+   file.b += b;
+   file.d += d;
    file.m += m;
   } catch (FileNotFoundException e) {
    System.out.println("Uknown error");
@@ -142,5 +140,4 @@ public class Reader extends MyFile {
 
   // !AT THE END SAVE ALL TEH FILES IN AN ARRAY OF THIS CLASS
  }
-
 }
